@@ -45,13 +45,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <ListView
-            android:id="@+id/lvTrips"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/tripsFragmentContainer"
+            android:name="com.example.mytripapp.FragmentTrips"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:choiceMode="singleChoice"
-            android:dividerHeight="8dp"
-            android:padding="12dp" />
+            android:layout_height="match_parent" />
 
     </com.google.android.material.card.MaterialCardView>
 
