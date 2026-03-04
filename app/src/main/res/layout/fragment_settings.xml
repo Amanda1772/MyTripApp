@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_gradient_main"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/headerSettings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_gradient_header"
+        android:padding="16dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="@color/theme_text_main"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save your info and your vibe."
+            android:textColor="@color/theme_text_soft"
+            android:alpha="0.95"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_input"
+        android:hint="Name"
+        android:padding="14dp"
+        android:textColor="@color/theme_text_main"
+        android:textColorHint="@color/theme_hint"
+        app:layout_constraintTop_toBottomOf="@id/headerSettings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_input"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="14dp"
+        android:textColor="@color/theme_text_main"
+        android:textColorHint="@color/theme_hint"
+        app:layout_constraintTop_toBottomOf="@id/etName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_input"
+        android:hint="Phone number"
+        android:inputType="phone"
+        android:padding="14dp"
+        android:textColor="@color/theme_text_main"
+        android:textColorHint="@color/theme_hint"
+        app:layout_constraintTop_toBottomOf="@id/etEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/darkRow"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_chip"
+        android:gravity="center_vertical"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/etPhone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dark mode"
+            android:textColor="@color/theme_text_main"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchDarkMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btnSaveSettings"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_chip"
+        android:text="Save settings"
+        android:textStyle="bold"
+        android:textColor="@color/theme_text_main"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/darkRow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <color name="theme_bg_start">#0F172A</color>
+    <color name="theme_bg_end">#1E293B</color>
+
+    <color name="theme_header_start">#1B2A5A</color>
+    <color name="theme_header_end">#0F3B4A</color>
+
+    <color name="theme_card_start">#121A2E</color>
+    <color name="theme_card_end">#0F172A</color>
+
+    <color name="theme_text_main">#E5E7EB</color>
+    <color name="theme_text_soft">#A5B4FC</color>
+
+    <color name="theme_border">#B9A8FF</color>
+    <color name="theme_hint">#FFFFFF</color>
+</resources>

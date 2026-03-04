@@ -1,7 +1,24 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.MyTripApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+    <style name="Theme.MyTripApp" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Dark mode should keep your current colors -->
+        <item name="colorPrimary">@color/bg_start</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSurface">@color/bg_end</item>
+        <item name="colorOnSurface">@color/white</item>
+
+        <item name="colorSurfaceVariant">@color/bg_start</item>
+        <item name="colorOnSurfaceVariant">@color/white</item>
+
+        <!-- Window background -->
+        <item name="android:windowBackground">@color/bg_end</item>
+
+        <!-- System bars -->
+        <item name="android:statusBarColor">@color/bg_start</item>
+        <item name="android:navigationBarColor">@color/bg_end</item>
+
     </style>
+
 </resources>

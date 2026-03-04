@@ -1,35 +1,39 @@
-package com.example.mytripapp
+package com.example.mytripapp.ui
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.button.MaterialButton
+import androidx.fragment.app.Fragment
+import com.example.mytripapp.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Apply theme BEFORE content is shown
+        SettingsManager.applyTheme(this)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val etEmail = findViewById<EditText>(R.id.etEmail)
-        val etPassword = findViewById<EditText>(R.id.etPassword)
-        val btnLogin = findViewById<MaterialButton>(R.id.btnLogin)
+        val bottom = findViewById<BottomNavigationView>(R.id.bottomNav)
 
-        btnLogin.setOnClickListener {
-
-            val email = etEmail.text.toString().trim()
-            val password = etPassword.text.toString().trim()
-
-            if (email.isEmpty() || password.isEmpty()) {
-                etEmail.error = if (email.isEmpty()) "Email required" else null
-                etPassword.error = if (password.isEmpty()) "Password required" else null
-                return@setOnClickListener
-            }
-
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-            finish()
+        if (savedInstanceState == null) {
+            openFragment(TripsFragment())
         }
+
+        bottom.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_trips -> openFragment(TripsFragment())
+                R.id.nav_pinned -> openFragment(PinnedFragment())
+                R.id.nav_settings -> openFragment(SettingsFragment())
+            }
+            true
+        }
+    }
+
+    private fun openFragment(f: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, f)
+            .commit()
     }
 }
